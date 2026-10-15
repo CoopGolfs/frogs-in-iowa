@@ -1,0 +1,261 @@
+/* Iowa Frog Sounds — shared styles */
+
+:root {
+  --ink: #121c1a;
+  --panel: #1b2a26;
+  --panel-2: #223832;
+  --rule: #2e4440;
+  --moon: #e8d9a0;
+  --leaf: #8fc49c;
+  --mist: #e7ede9;
+  --muted: #9fb3ac;
+  --max: 760px;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--ink);
+  color: var(--mist);
+  font-family: "Source Sans 3", -apple-system, Segoe UI, Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: "Fraunces", Georgia, serif;
+  color: var(--moon);
+  line-height: 1.2;
+  margin: 0 0 0.5em;
+}
+
+h1 { font-size: 2.3rem; font-weight: 600; }
+h2 { font-size: 1.55rem; font-weight: 600; margin-top: 2em; }
+h3 { font-size: 1.15rem; font-weight: 600; color: var(--mist); }
+
+p { margin: 0 0 1.1em; max-width: 68ch; }
+
+a { color: var(--leaf); text-decoration-color: rgba(143, 196, 156, 0.4); }
+a:hover { text-decoration-color: var(--leaf); }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--moon); outline-offset: 3px; }
+
+/* Fictional notice banner */
+.notice {
+  background: #0c1412;
+  color: var(--muted);
+  font-size: 0.82rem;
+  text-align: center;
+  padding: 0.55em 1em;
+  border-bottom: 1px solid var(--rule);
+}
+
+/* Header / nav */
+header.site {
+  padding: 1.4em 1.2em 0.4em;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.4em 1em;
+  border-bottom: 1px solid var(--rule);
+  padding-bottom: 1em;
+}
+
+.brand a.home-link {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--mist);
+  text-decoration: none;
+}
+
+.brand a.home-link span { color: var(--leaf); }
+
+nav.main ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3em 1.3em;
+  margin: 0;
+  padding: 0;
+}
+
+nav.main a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0.15em;
+}
+
+nav.main a:hover, nav.main a[aria-current="page"] {
+  color: var(--moon);
+  border-bottom-color: var(--leaf);
+}
+
+/* Main content */
+main {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 2.2em 1.2em 1em;
+}
+
+main.wide { max-width: 980px; }
+
+.lede {
+  font-size: 1.12rem;
+  color: var(--mist);
+}
+
+.tag {
+  display: inline-block;
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.78rem;
+  padding: 0.25em 0.7em;
+  border-radius: 999px;
+  margin-bottom: 1em;
+}
+
+/* Card grid on homepage */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.1em;
+  margin: 1.8em 0 2.4em;
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 10px;
+  padding: 1.3em 1.3em 1.4em;
+  text-decoration: none;
+  color: var(--mist);
+  display: block;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.card:hover { border-color: var(--leaf); background: var(--panel-2); }
+
+.card .sound {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.05rem;
+  color: var(--moon);
+  margin-bottom: 0.3em;
+}
+
+.card p { font-size: 0.92rem; color: var(--muted); margin-bottom: 0.6em; }
+
+.card .go { font-size: 0.85rem; color: var(--leaf); }
+
+/* Wave divider, pure CSS, no images */
+.wave {
+  height: 28px;
+  margin: 0.4em 0 1.6em;
+  background-image: repeating-linear-gradient(
+    90deg,
+    var(--rule) 0px, var(--rule) 2px,
+    transparent 2px, transparent 10px
+  );
+  background-size: 10px 2px;
+  background-position: center;
+  background-repeat: repeat-x;
+  position: relative;
+}
+
+/* Species comparison table */
+.table-wrap { overflow-x: auto; margin: 1.4em 0; }
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 480px;
+  font-size: 0.95rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.65em 0.8em;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+th {
+  color: var(--moon);
+  font-family: "Fraunces", Georgia, serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+/* Decision steps */
+ol.steps { padding-left: 1.2em; }
+ol.steps li { margin-bottom: 0.7em; }
+
+/* Season calendar strip */
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 4px;
+  margin: 1em 0 1.8em;
+}
+
+.calendar .month {
+  background: var(--panel);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  text-align: center;
+  padding: 0.5em 0.2em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+.calendar .month.active {
+  background: #2c4a3a;
+  border-color: var(--leaf);
+  color: var(--moon);
+}
+
+/* Callout box */
+.callout {
+  background: var(--panel);
+  border-left: 3px solid var(--leaf);
+  padding: 1em 1.2em;
+  border-radius: 0 8px 8px 0;
+  margin: 1.4em 0;
+}
+
+.callout p:last-child { margin-bottom: 0; }
+
+/* Footer */
+footer.site {
+  max-width: 980px;
+  margin: 3em auto 0;
+  padding: 1.6em 1.2em 2.4em;
+  border-top: 1px solid var(--rule);
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+footer.site .fiction {
+  color: var(--muted);
+  margin-bottom: 0.8em;
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  body { font-size: 17px; }
+  h1 { font-size: 1.8rem; }
+  .grid { grid-template-columns: 1fr; }
+  .brand { flex-direction: column; align-items: flex-start; }
+  .calendar { grid-template-columns: repeat(6, 1fr); }
+}
