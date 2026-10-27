@@ -10,15 +10,36 @@
   --mist: #e7ede9;
   --muted: #9fb3ac;
   --max: 760px;
+  --veil: rgba(9, 22, 20, 0.88);
 }
 
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  background-color: #0b1d1f;
+}
+
+/* Pond scene: night sky, moon glow, water, and reed silhouettes.
+   Fixed so it stays put while the page scrolls; no image files needed. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 260' width='640' height='260'%3E%3Cg fill='%23061210'%3E%3Cpath d='M10 260 C22 205 52 172 84 150 C62 188 46 222 40 260Z'/%3E%3Cpath d='M180 260 C186 215 214 180 252 160 C230 196 212 226 206 260Z'/%3E%3Cpath d='M330 260 C338 222 364 196 398 182 C380 210 366 236 360 260Z'/%3E%3Cpath d='M470 260 C478 210 506 176 548 154 C524 192 506 224 500 260Z'/%3E%3Cpath d='M590 260 C598 228 616 208 640 196 L640 260Z'/%3E%3Crect x='44.5' y='48' width='7' height='34' rx='3.5'/%3E%3Crect x='94.5' y='92' width='7' height='30' rx='3.5'/%3E%3Crect x='228.5' y='32' width='7' height='36' rx='3.5'/%3E%3Crect x='368.5' y='62' width='7' height='34' rx='3.5'/%3E%3Crect x='518.5' y='42' width='7' height='36' rx='3.5'/%3E%3C/g%3E%3Cg fill='none' stroke='%23061210' stroke-linecap='round'%3E%3Cpath d='M48 260 C44 190 36 120 48 60' stroke-width='3'/%3E%3Cpath d='M98 260 C94 200 104 150 98 104' stroke-width='3'/%3E%3Cpath d='M155 260 C161 210 151 170 163 130' stroke-width='2.5'/%3E%3Cpath d='M232 260 C228 180 242 110 232 44' stroke-width='3'/%3E%3Cpath d='M302 260 C308 215 298 175 306 140' stroke-width='2.5'/%3E%3Cpath d='M372 260 C368 190 382 120 372 74' stroke-width='3'/%3E%3Cpath d='M442 260 C448 205 438 165 448 120' stroke-width='2.5'/%3E%3Cpath d='M522 260 C518 190 532 130 522 54' stroke-width='3'/%3E%3Cpath d='M586 260 C591 215 581 185 591 150' stroke-width='2.5'/%3E%3C/g%3E%3C/svg%3E"),
+    repeating-linear-gradient(180deg, rgba(232, 217, 160, 0.035) 0, rgba(232, 217, 160, 0.035) 1px, transparent 1px, transparent 9px),
+    radial-gradient(circle at 86% 7%, rgba(232, 217, 160, 0.20), rgba(232, 217, 160, 0) 24%),
+    linear-gradient(180deg, #0c2030 0%, #123836 42%, #0f2e25 74%, #09191a 100%);
+  background-repeat: repeat-x, no-repeat, no-repeat, no-repeat;
+  background-position: bottom center, bottom center, 0 0, 0 0;
+  background-size: 640px auto, 100% 38%, 100% 100%, 100% 100%;
+}
 
 body {
   margin: 0;
-  background: var(--ink);
   color: var(--mist);
   font-family: "Source Sans 3", -apple-system, Segoe UI, Roboto, sans-serif;
   font-size: 18px;
@@ -54,10 +75,17 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--moon); outline-
 
 /* Header / nav */
 header.site {
-  padding: 1.4em 1.2em 0.4em;
-  max-width: 980px;
-  margin: 0 auto;
+  width: calc(100% - 1.2em);
+  max-width: var(--max);
+  margin: 1em auto 0;
+  padding: 1em 1.4em;
+  background: var(--veil);
+  border: 1px solid rgba(143, 196, 156, 0.14);
+  border-radius: 14px;
 }
+
+body:has(main.wide) header.site,
+main.wide ~ footer.site { max-width: 980px; }
 
 .brand {
   display: flex;
@@ -65,8 +93,6 @@ header.site {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 0.4em 1em;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 1em;
 }
 
 .brand a.home-link {
@@ -103,9 +129,13 @@ nav.main a:hover, nav.main a[aria-current="page"] {
 
 /* Main content */
 main {
+  width: calc(100% - 1.2em);
   max-width: var(--max);
-  margin: 0 auto;
-  padding: 2.2em 1.2em 1em;
+  margin: 1em auto 0;
+  padding: 2em 1.5em 1.4em;
+  background: var(--veil);
+  border: 1px solid rgba(143, 196, 156, 0.14);
+  border-radius: 14px;
 }
 
 main.wide { max-width: 980px; }
@@ -238,10 +268,13 @@ ol.steps li { margin-bottom: 0.7em; }
 
 /* Footer */
 footer.site {
-  max-width: 980px;
-  margin: 3em auto 0;
-  padding: 1.6em 1.2em 2.4em;
-  border-top: 1px solid var(--rule);
+  width: calc(100% - 1.2em);
+  max-width: var(--max);
+  margin: 1em auto 5.5em;
+  padding: 1.4em 1.4em 1.6em;
+  background: var(--veil);
+  border: 1px solid rgba(143, 196, 156, 0.14);
+  border-radius: 14px;
   color: var(--muted);
   font-size: 0.85rem;
 }
@@ -254,6 +287,10 @@ footer.site .fiction {
 /* Mobile */
 @media (max-width: 640px) {
   body { font-size: 17px; }
+  body::before { background-size: 460px auto, 100% 38%, 100% 100%, 100% 100%; }
+  header.site { padding: 0.9em 1em; }
+  main { padding: 1.4em 1em 1.1em; border-radius: 10px; }
+  footer.site { padding: 1.2em 1em 1.3em; margin-bottom: 4.5em; border-radius: 10px; }
   h1 { font-size: 1.8rem; }
   .grid { grid-template-columns: 1fr; }
   .brand { flex-direction: column; align-items: flex-start; }
