@@ -4,11 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>What Frog Is Making a Loud Trilling Noise at Night in Iowa?</title>
-<meta name="description" content="Three Iowa species make a loud trilling sound after dark: the Eastern Gray Treefrog, Cope's Gray Treefrog, and the American Toad. Compare pitch, length, and season to tell them apart.">
+<meta name="description" content="Hearing a loud trill at night in Iowa? It's likely an Eastern or Cope's gray treefrog or an American toad. Compare length, pitch, and season.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="canonical" href="https://coopgolfs.github.io/frogs-in-iowa/trilling-noise-iowa.html">
 <link rel="stylesheet" href="style.css">
+<script src="audio-player.js" defer></script>
 </head>
 <body>
 
@@ -71,33 +73,70 @@
 
   <p>The quickest way to separate the two treefrogs from the toad is duration: a treefrog's trill is over in a couple of seconds, while the American Toad holds one long, continuous note that can run half a minute. Telling the two treefrogs apart from each other is harder and mostly comes down to texture — Cope's Gray Treefrog's call is noticeably more clipped and buzzy than the Eastern Gray Treefrog's smoother, slower pulse. In the field, even experienced listeners often need several calls side by side before they're confident which gray treefrog they're hearing.</p>
 
-  <h3>Eastern Gray Treefrog</h3>
-  <img src="eastern-gray-treefrog.jpg" width="612" height="408" loading="lazy" alt="Eastern gray treefrog with mottled gray skin resting on a tree branch against a green background" style="display:block;max-width:100%;height:auto;border-radius:8px;margin:0 0 1.4em;">
-
-  <h3>Cope's Gray Treefrog</h3>
-  <img src="copes-gray-treefrog.jpg" width="375" height="270" loading="lazy" alt="Cope's gray treefrog with mottled gray-green skin and a gold eye sitting on a weathered tree stump" style="display:block;max-width:100%;height:auto;border-radius:8px;margin:0 0 1.4em;">
-
-  <h3>American Toad</h3>
-  <img src="american-toad.jpg" width="800" height="533" loading="lazy" alt="American toad with bumpy brown and black patterned skin sitting on wet green moss" style="display:block;max-width:100%;height:auto;border-radius:8px;margin:0 0 1.4em;">
-
-  <h2>Listen to each call</h2>
+  <h2>Gray treefrog and American toad call recordings</h2>
   <p>Reading a description only gets you so far. Press play on each recording below with your eyes closed and compare the length and texture to what you heard outside.</p>
 
   <h3>Eastern Gray Treefrog</h3>
-  <iframe src="https://www.youtube-nocookie.com/embed/2kd5c4p8-0M" title="Eastern gray treefrog calling" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display:block;width:100%;max-width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:0 0 1.4em;"></iframe>
+  <figure class="species">
+    <img src="eastern-gray-treefrog.jpg" width="612" height="408" loading="lazy" alt="Eastern gray treefrog, a trilling frog common in Iowa, resting on a tree branch">
+    <div class="player" data-player data-name="Eastern gray treefrog call" data-fallback="https://www.youtube.com/watch?v=2kd5c4p8-0M">
+      <audio preload="none" src="eastern-gray-treefrog.mp3"></audio>
+      <button class="play-btn" type="button" aria-label="Play Eastern gray treefrog call">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <div class="player-main">
+        <span class="player-label">Eastern gray treefrog call</span>
+        <input class="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek Eastern gray treefrog call">
+      </div>
+      <span class="player-time" aria-hidden="true">0:00</span>
+      <p class="player-note" role="status" hidden></p>
+    </div>
+  </figure>
 
   <h3>Cope's Gray Treefrog</h3>
-  <iframe src="https://www.youtube-nocookie.com/embed/96W0crcrb_s" title="Cope's Gray Treefrog call" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display:block;width:100%;max-width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:0 0 1.4em;"></iframe>
+  <figure class="species">
+    <img src="copes-gray-treefrog.jpg" width="375" height="270" loading="lazy" alt="Cope's gray treefrog, nearly identical to the Eastern gray treefrog, on a weathered stump">
+    <div class="player" data-player data-name="Cope's gray treefrog call" data-fallback="https://www.youtube.com/watch?v=96W0crcrb_s">
+      <audio preload="none" src="copes-gray-treefrog.mp3"></audio>
+      <button class="play-btn" type="button" aria-label="Play Cope's gray treefrog call">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <div class="player-main">
+        <span class="player-label">Cope's gray treefrog call</span>
+        <input class="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek Cope's gray treefrog call">
+      </div>
+      <span class="player-time" aria-hidden="true">0:00</span>
+      <p class="player-note" role="status" hidden></p>
+    </div>
+  </figure>
 
   <h3>American Toad</h3>
-  <iframe src="https://www.youtube-nocookie.com/embed/ULB6phprgX8" title="American Toad calling" loading="lazy" allow="encrypted-media; picture-in-picture" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen style="display:block;width:100%;max-width:100%;aspect-ratio:16/9;border:0;border-radius:8px;margin:0 0 1.4em;"></iframe>
+  <figure class="species">
+    <img src="american-toad.jpg" width="800" height="533" loading="lazy" alt="American toad with bumpy brown skin, known for a long sustained trill at night">
+    <div class="player" data-player data-name="American toad call" data-fallback="https://www.youtube.com/watch?v=ULB6phprgX8">
+      <audio preload="none" src="american-toad.mp3"></audio>
+      <button class="play-btn" type="button" aria-label="Play American toad call">
+        <svg class="icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        <svg class="icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>
+      </button>
+      <div class="player-main">
+        <span class="player-label">American toad call</span>
+        <input class="seek" type="range" min="0" max="100" value="0" step="0.1" aria-label="Seek American toad call">
+      </div>
+      <span class="player-time" aria-hidden="true">0:00</span>
+      <p class="player-note" role="status" hidden></p>
+    </div>
+  </figure>
+  <p class="credit">Recordings: U.S. Geological Survey, Upper Midwest Environmental Sciences Center.</p>
 
   <h2>Where the sound is coming from</h2>
   <p>All three species call from in or near standing water — ponds, ditches, flooded fields, and retention basins all qualify. The two treefrogs often call from several feet up in nearby trees or shrubs rather than from the water itself, which is why the sound can seem to come from everywhere at once. The American Toad calls low, usually right at the water's edge or from shallow water.</p>
 
   <h2>Could it be something else?</h2>
   <div class="callout">
-    <p>A few sounds commonly get mistaken for frog trills. Cicadas produce a similar buzzing tone but call during the day in mid-to-late summer, not at night in spring. Crickets produce a higher, more clicking chirp rather than a sustained trill. If the sound is happening after dark between April and August and includes a clear, continuous buzzing or musical note, a frog or toad is the more likely source.</p>
+    <p>A few sounds commonly get mistaken for frog trills. Cicadas produce a similar buzzing tone but call during the day in mid-to-late summer, not at night in spring. Crickets produce a higher, more clicking chirp rather than a sustained trill. If the sound is happening after dark between April and August and includes a clear, continuous buzzing or musical note, a frog or toad is the more likely source. A short, high peep rather than a trill is more likely the <a href="spring-peeper.html">spring peeper frog sound</a>.</p>
   </div>
 
   <h2>Hearing more than one at once?</h2>
